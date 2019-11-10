@@ -6,9 +6,9 @@ import com.tamimattafi.mvp.adapters.PagerRecyclerAdapter
 interface MainContract {
 
     interface NewsHolder : Holder {
-        fun setTitle(title: String)
-        fun setDescription(description: String)
-        fun setDate(date: String)
+        fun setTitle(title: String?)
+        fun setDescription(description: String?)
+        fun setDate(date: String?)
         fun setImage(link: String)
         fun setImageError()
     }

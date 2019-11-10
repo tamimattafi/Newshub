@@ -8,15 +8,15 @@ import kotlinx.android.synthetic.main.holder_news.view.*
 
 class NewsViewHolder(itemView: View) : RecyclerHolder(itemView), MainContract.NewsHolder {
 
-    override fun setTitle(title: String) {
+    override fun setTitle(title: String?) {
         itemView.title.text = title
     }
 
-    override fun setDescription(description: String) {
+    override fun setDescription(description: String?) {
         itemView.description.text = description
     }
 
-    override fun setDate(date: String) {
+    override fun setDate(date: String?) {
         itemView.date.text = date
     }
 
