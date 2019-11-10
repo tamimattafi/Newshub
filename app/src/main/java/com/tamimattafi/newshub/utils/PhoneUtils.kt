@@ -6,14 +6,13 @@ import android.net.NetworkCapabilities
 
 object PhoneUtils {
 
-    fun Context.isConnected() : Boolean {
-        val connectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager?
-        return if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
-            val capabilities = connectivityManager?.getNetworkCapabilities(connectivityManager.activeNetwork)
-            capabilities != null && capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
-        } else @Suppress("DEPRECATION") {
-            val activeNetworkInfo = connectivityManager!!.activeNetworkInfo
-            activeNetworkInfo != null && activeNetworkInfo.isConnectedOrConnecting
+    fun Context.isConnected() : Boolean
+        = with(getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager) {
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+                getNetworkCapabilities(activeNetwork)?.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET) ?: false
+            } else @Suppress("DEPRECATION") {
+                activeNetworkInfo?.isConnectedOrConnecting ?: false
+            }
         }
-    }
+
 }

@@ -14,8 +14,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/SplashTheme"
-        tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".app.ui.ApplicationActivity">
+        android:hardwareAccelerated="true"
+        android:largeHeap="true"
+        android:usesCleartextTraffic="true"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning"
+        tools:targetApi="m">
+        <activity
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:name=".app.ui.ApplicationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

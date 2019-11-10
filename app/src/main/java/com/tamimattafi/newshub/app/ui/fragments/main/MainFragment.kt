@@ -11,6 +11,7 @@ import com.tamimattafi.newshub.R
 import com.tamimattafi.newshub.app.ui.fragments.main.MainContract.*
 import kotlinx.android.synthetic.main.fragment_main.*
 import  com.tamimattafi.newshub.app.ui.fragments.main.MainValues.Actions.TRY_AGAIN
+import com.tamimattafi.newshub.app.ui.fragments.web.WebFragment
 import javax.inject.Inject
 
 class MainFragment : NavigationContract.NavigationFragment(), View {
@@ -57,7 +58,7 @@ class MainFragment : NavigationContract.NavigationFragment(), View {
     }
 
     override fun openWebView(link: String) {
-
+        navigationManager.requestSlideLeftScreen(WebFragment(link))
     }
 
     private fun RecyclerView.prepare() {

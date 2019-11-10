@@ -12,6 +12,7 @@ class EmptyHolder(itemView: View, placeholderData: PlaceholderData) : ListenerRe
         placeholderData.apply {
             itemView.label.text = label
             itemView.description.text = description
+            drawableRes?.let { itemView.placeholder.setImageResource(it) }
             with(itemView.button) {
                 action.apply {
                     text = label

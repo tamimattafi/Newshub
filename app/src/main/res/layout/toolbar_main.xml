@@ -2,10 +2,12 @@
 <com.google.android.material.appbar.AppBarLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:overScrollMode="always"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <com.tamimattafi.newshub.app.ui.custom.BaseToolbar
+        app:layout_scrollFlags="scroll|enterAlways"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="?actionBarSize">

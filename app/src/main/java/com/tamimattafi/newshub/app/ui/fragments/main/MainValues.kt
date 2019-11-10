@@ -43,6 +43,7 @@ object MainValues {
             = PlaceholderData(
             getString(R.string.error_loading_data),
             getString(R.string.error_loading_data_description),
+            R.drawable.placeholder_error_server,
             getActionData(TRY_AGAIN)
         )
 
